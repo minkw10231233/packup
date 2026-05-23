@@ -6,7 +6,7 @@
 ## 배포 링크
 
 - GitHub: https://github.com/minkw10231233/packup
-- Demo: 배포 후 추가 예정
+- Demo: https://packup-delta.vercel.app/
 
 ## 프로젝트 소개
 
