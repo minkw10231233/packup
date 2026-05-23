@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# PackUp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+원룸 · 투룸 · 반포장 이사를 위한 React 기반 이사 서비스 웹앱입니다.  
+서비스 소개, 예상 견적 계산, 상담 신청, 관리자용 상담 관리 기능까지 하나의 흐름으로 구성했습니다.
 
-## Available Scripts
+## 배포 링크
 
-In the project directory, you can run:
+- GitHub: https://github.com/minkw10231233/packup
+- Demo: 배포 후 추가 예정
 
-### `npm start`
+## 프로젝트 소개
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+PackUp은 이사 서비스를 찾는 사용자가 서비스 유형을 확인하고, 조건에 따른 예상 견적을 계산한 뒤 상담 신청까지 진행할 수 있는 웹앱입니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+기존의 단순 랜딩페이지 구조에서 벗어나, 서비스 상세 페이지를 데이터 기반으로 분리하고, 상담 신청 데이터 저장 및 관리자 페이지를 추가하여 실제 서비스 흐름에 가까운 구조로 개선했습니다.
 
-### `npm test`
+## 주요 기능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. 서비스 상세 페이지 데이터 기반 렌더링
 
-### `npm run build`
+- `/service/:id` 라우트를 활용한 동적 상세 페이지 구현
+- 운전만, 1인 도움, 2인 도움 서비스를 각각 별도 페이지로 만들지 않고 데이터만 바꿔 렌더링
+- 서비스 상세 콘텐츠와 이미지 정보를 `serviceDetails` 데이터로 분리
+- 잘못된 서비스 주소 접근 시 예외 화면 제공
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. 예상 견적 계산 기능
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 이사 유형, 이동 거리, 층수, 엘리베이터 여부, 짐 양을 입력받아 예상 견적 계산
+- 기본 요금, 거리 추가 요금, 층수 추가 요금, 엘리베이터 추가 요금, 짐 양 추가 요금을 분리해 상세 내역 표시
+- 입력값 변경 시 계산 결과가 즉시 반영되도록 구현
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. 상담 신청 기능
 
-### `npm run eject`
+- 이름, 연락처, 이메일, 상담 유형, 희망 날짜, 희망 시간, 상담 내용을 입력받는 상담 신청 폼 구현
+- 필수 입력값 검증
+- 연락처 형식 검증
+- 이메일 형식 검증
+- 개인정보 수집 동의 체크 검증
+- 상담 신청 완료 시 완료 페이지로 이동
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 4. 상담 신청 데이터 저장
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 상담 신청 데이터를 브라우저 `localStorage`에 저장
+- 저장 key: `packup_consults`
+- 저장 시 고유 ID와 신청 상태값을 함께 저장
+- 기본 상태값은 `pending`으로 설정
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> 이 프로젝트의 관리자 페이지는 포트폴리오 데모용이며, 실제 백엔드 서버 대신 브라우저 localStorage를 사용했습니다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 5. 관리자 페이지
 
-## Learn More
+관리자 데모 페이지 주소:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```txt
+/admin
