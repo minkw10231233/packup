@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "PackUp",
+  "name": "PackUp 이사 견적 서비스",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,5 +1,6 @@
 {
-  "name": "blog",
+  "name": "packup",
+  "description": "이사 견적 계산 및 상담 신청을 제공하는 React 기반 웹앱",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
